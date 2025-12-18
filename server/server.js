@@ -20,11 +20,11 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+http://narendra.online:30081/
 // Middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173", "http://narendra.online","http://narendra.online:30082"], credentials: true }));
 
 // Static files
 app.use("/outputs", express.static(path.join(__dirname, "outputs")));

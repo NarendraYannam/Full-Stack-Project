@@ -23,7 +23,7 @@ callbackrouter.get('/callback', async (req, res) => {
 
     // Redirect to another route and pass the token via URL
     const accessToken = tokens.access_token;
-    const redirectUrl = `http://localhost:5000/api/drive/files?access_token=${accessToken}`;
+    const redirectUrl = `${process.env.API_URL || "http://narendra.online/backend"}/api/drive/files?access_token=${accessToken}`;
 
     res.redirect(redirectUrl);  // Redirect with the token in the URL
   } catch (error) {
